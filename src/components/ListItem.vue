@@ -21,7 +21,7 @@
                                 </thead>
       <tbody>
           <tr v-for="book of books" :key="book['.key']">
-            <td>{{ book.nombre }}</td>
+            <td>{{ book.name }}</td>
             <td>{{ book.autor }}</td>
             <td>{{ book.genero }}</td>
              <td>{{ book.numero_de_pagina }}</td>
@@ -64,7 +64,13 @@ export default {
   },
   methods: {
     deleteItem(key) {
-      this.$firebaseRefs.books.child(key).remove();
+       var conf = confirm('Seguro De Que Quiere Borrar este libro');
+      if(conf == true){
+        this.$firebaseRefs.books.child(key).remove();
+      }
+      else{
+        return false;
+      }
     }
   }
 }

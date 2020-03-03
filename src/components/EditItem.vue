@@ -8,7 +8,7 @@
                 <form v-on:submit.prevent="updateBook">
                  <div class="form-group">
                         <label>Nombre del Libro:</label>
-                        <input type="text" class="form-control" v-model="newBook.nombre_del_libro"/>
+                        <input type="text" class="form-control" v-model="newBook.name"/>
                     </div>
                     <div class="form-group">
                         <label>Autor:</label>
@@ -20,7 +20,7 @@
                     </div>
                     <div class="form-group">
                         <label>Page Number:</label>
-                        <input type="text" class="form-control" v-model="newBook.numero_de_pagina"/>
+                        <input type="number" class="form-control" v-model="newBook.numero_de_pagina"/>
                     </div>
                     <div class="form-group">
                         <label>Editora:</label>
@@ -28,7 +28,7 @@
                     </div>
                      <div class="form-group">
                         <label>Precio:</label>
-                        <input type="text" class="form-control" v-model="newBook.precio"/>
+                        <input type="number" class="form-control" v-model="newBook.precio"/>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Update Item"/>
@@ -60,18 +60,18 @@ export default {
     }
   },
   created() {
-     let item = this.itemsObj[this.$route.params.id]
+     let book = this.itemsObj[this.$route.params.id]
      this.newBook = {
-         name: item.nombre,
-            autor: item.autor,
-            genero:item.genero,
-            numero_de_pagina:item.numero_de_pagina,
-            editora:item.editora,
-            precio:item.precio
+            name: book.name,
+            autor: book.autor,
+            genero:book.genero,
+            numero_de_pagina:book.numero_de_pagina,
+            editora:book.editora,
+            precio:book.precio
      }
   },
   methods: {
-    updateItem() {
+    updateBook() {
       this.$firebaseRefs.books.child(this.$route.params.id).set(this.newBook);
       this.$router.push('/index')
     }

@@ -4,13 +4,13 @@
                     <div class="card">
                         <div class="card-header">
                             <img alt="Vue logo" height="120px" src="https://findicons.com/files/icons/2799/flat_icons/256/book_add.png" />
-                            <h3>Add A New LIBRO</h3>
+                            <h3>Add A New Book</h3>
                         </div>
                         <div class="card-body">
-                            <form v-on:submit.prevent="addItem">
+                            <form v-on:submit.prevent="addBook">
                     <div class="form-group">
                         <label>Nombre del Libro:</label>
-                        <input type="text" class="form-control" v-model="newBook.nombre"/>
+                        <input type="text" class="form-control" v-model="newBook.name"/>
                     </div>
                     <div class="form-group">
                         <label>Autor:</label>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="form-group">
                         <label>Page Number:</label>
-                        <input type="text" class="form-control" v-model="newBook.numero_de_pagina"/>
+                        <input type="number" class="form-control" v-model="newBook.numero_de_pagina"/>
                     </div>
                     <div class="form-group">
                         <label>Editora:</label>
@@ -30,10 +30,10 @@
                     </div>
                      <div class="form-group">
                         <label>Precio:</label>
-                        <input type="text" class="form-control" v-model="newBook.precio"/>
+                        <input type="number" class="form-control" v-model="newBook.precio"/>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Add Item"/>
+                        <input type="submit" class="btn btn-primary" value="Add Book"/>
                     </div>
                 </form>
                         </div>
@@ -67,9 +67,9 @@ export default {
     }
   },
   methods: {
-      addItem() {
+      addBook() {
         this.$firebaseRefs.books.push({
-            name: this.newBook.nombre,
+            name: this.newBook.name,
             autor: this.newBook.autor,
             genero:this.newBook.genero,
             numero_de_pagina:this.newBook.numero_de_pagina,
@@ -77,7 +77,7 @@ export default {
             precio:this.newBook.precio
 
         })
-        this.newBook.nombre,
+        this.newBook.name,
             this.newBook.autor,
             this.newBook.genero,
             this.newBook.numero_de_pagina,
