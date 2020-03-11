@@ -1,14 +1,12 @@
 <template>
-    <div class="container">
-                <div class="col-xl-20">
-                    <div class="card">
-                        <div class="card-header">
-                            <img alt="Vue logo" height="120px" src="https://findicons.com/files/icons/2799/flat_icons/256/book_add.png" />
-                            <h3>Add A New Book</h3>
-                        </div>
-                        <div class="card-body">
-                            <form v-on:submit.prevent="addBook">
-                    <div class="form-group">
+  <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h3>Editar Libros</h3>
+            </div>
+            <div class="card-body">
+                <form v-on:submit.prevent="updateBook">
+                 <div class="form-group">
                         <label>Nombre del Libro:</label>
                         <input type="text" class="form-control" v-model="newBook.name"/>
                     </div>
@@ -33,14 +31,12 @@
                         <input type="number" class="form-control" v-model="newBook.precio"/>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Add Book"/>
+                        <input type="submit" class="btn btn-primary" value="Update Book"/>
                     </div>
                 </form>
-                        </div>
-                    </div>
-                </div>
             </div>
-    
+        </div>
+    </div>
 </template>
 
 <script>
@@ -49,42 +45,36 @@ import { db } from '../config/db';
 
 export default {
   components: {
-      name: 'AddItem'
+      name: 'EditItem'
   },
   firebase: {
-    books: db.ref('books')
+    books: db.ref('books'),
+    itemsObj: {
+      source: db.ref('books'),
+      asObject: true
+    }
   },
   data () {
     return {
-      newBook: {
-            nombre: '',
-            autor: '',
-            genero: '',
-            numero_de_pagina: '',
-            editora: '',
-            precio: '',
-      }
+      newBook: {}
     }
   },
+  created() {
+     let book = this.itemsObj[this.$route.params.id]
+     this.newBook = {
+            name: book.name,
+            autor: book.autor,
+            genero:book.genero,
+            numero_de_pagina:book.numero_de_pagina,
+            editora:book.editora,
+            precio:book.precio
+     }
+  },
   methods: {
-      addBook() {
-        this.$firebaseRefs.books.push({
-            name: this.newBook.name,
-            autor: this.newBook.autor,
-            genero:this.newBook.genero,
-            numero_de_pagina:this.newBook.numero_de_pagina,
-            editora:this.newBook.editora,
-            precio:this.newBook.precio
-
-        })
-        this.newBook.name,
-            this.newBook.autor,
-            this.newBook.genero,
-            this.newBook.numero_de_pagina,
-            this.newBook.editora,
-            this.newBook.precio
-        this.$router.push('/index')
-      }
+    updateBook() {
+      this.$firebaseRefs.books.child(this.$route.params.id).set(this.newBook);
+      this.$router.push('/index')
     }
+  }
 }
 </script>

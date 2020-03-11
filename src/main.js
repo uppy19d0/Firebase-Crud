@@ -1,14 +1,11 @@
 import Vue from 'vue'
 import VueFire from 'vuefire'
 import VueRouter from 'vue-router'
-import NProgress from 'nprogress';
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import NProgress from 'nprogress'
 import App from './App.vue'
-import AddItem from './components/AddItem.vue'
-import EditItem from './components/EditItem.vue'
-import ListItem from './components/ListItem.vue'
+import AddBook from './components/AddBook.vue'
+import EditBook from './components/EditBook.vue'
+import ListBook from './components/ListBook.vue'
 import Home from './components/Home.vue'
 import '../node_modules/nprogress/nprogress.css'
 Vue.use(VueFire)
@@ -21,15 +18,15 @@ const routes = [{
 }, {
     name: 'Add',
     path: '/add',
-    component: AddItem
+    component: AddBook
 }, {
     name: 'Edit',
     path: '/edit/:id',
-    component: EditItem
+    component: EditBook
 }, {
     name: 'List',
     path: '/index',
-    component: ListItem
+    component: ListBook
 }, ];
 const router = new VueRouter({ mode: 'history', routes: routes });
 router.beforeResolve((to, from, next) => {

@@ -10,9 +10,11 @@
     "dependencies": {
         "bootstrap": "^4.1.0",
         "firebase": "^4.12.1",
+        "firebase-tools": "^7.14.0",
         "nprogress": "^0.2.0",
         "vue": "^2.5.13",
         "vue-router": "^3.0.1",
+        "vue-simple-notify": "^1.0.5",
         "vuefire": "^1.4.5"
     },
     "devDependencies": {
@@ -22,16 +24,25 @@
         "vue-template-compiler": "^2.5.13"
     },
     "babel": {
-        "presets": ["@vue/app"]
+        "presets": [
+            "@vue/app"
+        ]
     },
     "eslintConfig": {
         "root": true,
-        "extends": ["plugin:vue/essential", "eslint:recommended"]
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ]
     },
     "postcss": {
         "plugins": {
             "autoprefixer": {}
         }
     },
-    "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 8"
+    ]
 }
