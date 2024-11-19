@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "bootstrap": "^5.0.0",
-        "firebase": "^4.12.1",
+        "firebase": "^10.9.0",
         "firebase-tools": "^12.8.1",
         "nprogress": "^0.2.0",
         "vue": "^3.0.0",
