@@ -2524,8 +2524,8 @@ body-parser@^1.18.3, body-parser@^1.19.0, body-parser@~1.20.3:
     unpipe "~1.0.0"
 
 body-parser@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-2.2.1.tgz#6df606b0eb0a6e3f783dde91dde182c24c82438c"
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-2.2.2.tgz#1a32cdb966beaf68de50a9dfbe5b58f83cb8890c"
   dependencies:
     bytes "^3.1.2"
     content-type "^1.0.5"
@@ -2533,7 +2533,7 @@ body-parser@^2.2.1:
     http-errors "^2.0.0"
     iconv-lite "^0.7.0"
     on-finished "^2.4.1"
-    qs "^6.14.0"
+    qs "^6.14.1"
     raw-body "^3.0.1"
     type-is "^2.0.1"
 
@@ -6976,9 +6976,9 @@ pupa@^2.1.1:
   dependencies:
     escape-goat "^2.0.0"
 
-qs@^6.14.0, qs@^6.6.0, qs@^6.7.0, qs@~6.14.0:
-  version "6.14.1"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.14.1.tgz#a41d85b9d3902f31d27861790506294881871159"
+qs@^6.14.0, qs@^6.14.1, qs@^6.6.0, qs@^6.7.0, qs@~6.14.0:
+  version "6.14.2"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.14.2.tgz#b5634cf9d9ad9898e31fba3504e866e8efb6798c"
   dependencies:
     side-channel "^1.1.0"
 
