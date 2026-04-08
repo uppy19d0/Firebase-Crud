@@ -2471,8 +2471,8 @@ basic-auth@~2.0.1:
     safe-buffer "5.1.2"
 
 basic-ftp@^5.0.2:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/basic-ftp/-/basic-ftp-5.2.0.tgz#7c2dff63c918bde60e6bad1f2ff93dcf5137a40a"
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/basic-ftp/-/basic-ftp-5.2.1.tgz#818ba176e0e52a9e746e8576331f7e9474b94668"
 
 batch@0.6.1:
   version "0.6.1"
